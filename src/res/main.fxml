@@ -12,7 +12,7 @@
 <VBox xmlns="http://javafx.com/javafx"
   xmlns:fx="http://javafx.com/fxml"
   fx:controller="edu.cnm.deepdive.craps.controller.Controller"
-  prefHeight="400.0" prefWidth="600.0">
+  >
 
   <stylesheets>
     <URL value="@styles.css"/>
