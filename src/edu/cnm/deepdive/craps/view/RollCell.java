@@ -11,15 +11,30 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
+/**
+ *
+ */
 public class RollCell extends ListCell<Roll> {
 
+  /**
+   *
+   */
   public static final String ROLL_FXML = "res/roll.fxml";
   private ResourceBundle bundle;
 
+  /**
+   *
+   * @param bundle
+   */
   public RollCell(ResourceBundle bundle) {
     this.bundle = bundle;
   }
 
+  /**
+   *
+   * @param item
+   * @param empty
+   */
   @Override
   protected void updateItem(Roll item, boolean empty) {
     super.updateItem(item, empty);

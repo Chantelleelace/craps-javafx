@@ -5,6 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+ /**
+  *
+  */
  public class Game {
 
    private final Object lock = new Object();
@@ -16,6 +19,10 @@ import java.util.Random;
    private int wins;
    private int losses;
 
+   /**
+    *
+    * @param rng
+    */
    public Game(Random rng) {
      this.rng = rng;
      rolls = new LinkedList<>();
@@ -23,6 +30,9 @@ import java.util.Random;
      losses = 0;
    }
 
+   /**
+    *
+    */
    public void reset() {
      state = State.COME_OUT;
      point = 0;
@@ -61,24 +71,43 @@ import java.util.Random;
      return state;
     }
 
+   /**
+    *
+    * @return
+    */
    public State getState() {
      return state;
    }
 
+   /**
+    *
+    * @return
+    */
    public List<Roll> getRolls() {
      synchronized (lock) {
        return new LinkedList<>(rolls);
      }
    }
 
+   /**
+    *
+    * @return
+    */
    public int getWins() {
      return wins;
    }
 
+   /**
+    *
+    * @return
+    */
    public int getLosses() {
      return losses;
    }
 
+   /**
+    *
+    */
    public static class Roll {
 
      private final int[] dice;
@@ -89,10 +118,18 @@ import java.util.Random;
        this.state = state;
      }
 
+     /**
+      *
+      * @return
+      */
      public int[] getDice() {
        return Arrays.copyOf(dice, 2);
      }
 
+     /**
+      *
+      * @return
+      */
      public State getState() {
        return state;
      }
