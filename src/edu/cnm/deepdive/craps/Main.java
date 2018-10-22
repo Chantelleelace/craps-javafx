@@ -11,6 +11,9 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+/**
+ * This is the main class
+ */
 public class Main extends Application {
 
 
@@ -24,6 +27,11 @@ public class Main extends Application {
   private FXMLLoader fxmlLoader;
   private Controller controller;
 
+  /**
+   * This is what launches the application
+   *
+   * @param args are commandline arguments
+   */
   public static void main(String[] args) {
     launch(args);
   }

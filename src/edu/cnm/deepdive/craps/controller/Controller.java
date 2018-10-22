@@ -16,6 +16,9 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 
+/**
+ * Controlls the model.
+ */
 public class Controller {
 
   public static final String PLACE_HOLDER_CLASS = "";
@@ -76,6 +79,9 @@ public class Controller {
     updateRolls(game.getRolls());
   }
 
+  /**
+   * pauses the run fast method.
+   */
   public void stop() {
     pause(null);
   }
@@ -115,6 +121,9 @@ public class Controller {
     private static final int TALLY_UPDATE_INTERVAL = 2000;
     private static final int ROLL_UPDATE_INTERVAL = 10000;
 
+    /**
+     * Runs our play fast method which plays the game continuously
+     */
     @Override
     public void run() {
       int count = 0;

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Random;
 
  /**
-  *
+  * This is the main class for the model that sets up the framework for the game.
   */
  public class Game {
 
@@ -20,8 +20,8 @@ import java.util.Random;
    private int losses;
 
    /**
-    *
-    * @param rng
+    * our random number generator.
+    * @param rng random number generator.
     */
    public Game(Random rng) {
      this.rng = rng;
@@ -31,7 +31,7 @@ import java.util.Random;
    }
 
    /**
-    *
+    * Resets the come out for the start of a game.
     */
    public void reset() {
      state = State.COME_OUT;
@@ -58,6 +58,10 @@ import java.util.Random;
      return state;
     }
 
+   /**
+    * Rolls the dice and increments wins and losses.
+    * @return win or loss at the end of game.
+    */
     public State play() {
      reset();
      while (state != State.WIN && state != State.LOSS) {
@@ -72,16 +76,16 @@ import java.util.Random;
     }
 
    /**
-    *
-    * @return
+    *Getter for State.
+    * @return state of game
     */
    public State getState() {
      return state;
    }
 
    /**
-    *
-    * @return
+    *Getter for Rolls.
+    * @return the rolls
     */
    public List<Roll> getRolls() {
      synchronized (lock) {
@@ -90,23 +94,23 @@ import java.util.Random;
    }
 
    /**
-    *
-    * @return
+    *Getter for wins.
+    * @return wins
     */
    public int getWins() {
      return wins;
    }
 
    /**
-    *
-    * @return
+    *Getter for losses.
+    * @return losses
     */
    public int getLosses() {
      return losses;
    }
 
    /**
-    *
+    *rolls dice
     */
    public static class Roll {
 
@@ -119,16 +123,16 @@ import java.util.Random;
      }
 
      /**
-      *
-      * @return
+      *Getter for dice
+      * @return two dice ints
       */
      public int[] getDice() {
        return Arrays.copyOf(dice, 2);
      }
 
      /**
-      *
-      * @return
+      *getter for state.
+      * @return current state.
       */
      public State getState() {
        return state;
@@ -140,6 +144,9 @@ import java.util.Random;
      }
    }
 
+   /**
+    * Current state of the game.
+    */
    public enum State {
 
      COME_OUT {
@@ -173,6 +180,12 @@ import java.util.Random;
        }
      };
 
+     /**
+      * Come out roll.
+      * @param total of the roll
+      * @param point of the game.
+      * @return next state
+      */
      public State roll(int total, int point) {
        return this;
      }

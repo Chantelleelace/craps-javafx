@@ -3,6 +3,7 @@ package edu.cnm.deepdive.craps.model;
 import static org.junit.jupiter.api.Assertions.*;
 
 import edu.cnm.deepdive.craps.model.Game.State;
+import java.security.SecureRandom;
 import org.junit.jupiter.api.Test;
 
 class GameTest {
@@ -29,5 +30,15 @@ class GameTest {
         }
       }
     }
+  }
+
+  @Test
+  void reset() {
+    Game game = new Game(new SecureRandom());
+    game.play();
+    game.reset();
+    assertEquals(State.COME_OUT, game.getState());
+    assertEquals(0, game.getRolls().size());
+
   }
 }
